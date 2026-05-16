@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+
+public function product()
+{
+    return $this->belongsTo(Product::class, 'product_id');
+}
+
+class Estimate extends Model
+{
+    protected $primaryKey = 'estimate_id';
+
+    protected $fillable = [
+        'customer_id',
+        'product_id',
+        'client_name',
+        'quantity',
+        'unit_price',
+        'line_description',
+        'amount',
+        'estimate_date',
+        'expiry_date',
+        'status'
+    ];
+}

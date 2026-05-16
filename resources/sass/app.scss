@@ -1,0 +1,32 @@
+// Vars
+$bg-primary: #f5f7fb;
+$surface: #ffffff;
+$text: #202a44;
+$muted: #6b7280;
+$border: #e5e7eb;
+$shadow: 0 8px 18px rgba(30, 41, 59, 0.09);
+
+@function btn($start, $end) {
+  @return linear-gradient(135deg, $start 0%, $end 100%);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, $bg-primary 0%, #edf2f7 100%);
+  color: $text;
+  line-height: 1.6;
+}
+
+$app-shell: 'flex';
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// ... (copy similar compiled style from app.css with SCSS syntax)
+
+// Reuse existing CSS just in Sass variable definitions
+// ...

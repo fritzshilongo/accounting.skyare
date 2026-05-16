@@ -1,0 +1,313 @@
+:root {
+  --bg: #f7fafc;
+  --surface: #ffffff;
+  --surface-soft: #edf2f7;
+  --text: #1a202c;
+  --text-muted: #4a5568;
+  --primary: #2b6cb0;
+  --primary-dark: #2c5282;
+  --accent: #ed64a6;
+  --border: #e2e8f0;
+  --success: #2f855a;
+  --danger: #e53e3e;
+  --warning: #d69e2e;
+  --transition: 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at top left, #ebf8ff 0%, #f7fafc 60%);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.app-container {
+  width: min(100% - 24px, 1240px);
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 0 8px 24px rgba(45, 55, 72, 0.08);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(45, 55, 72, 0.14);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.62rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.93rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), border-color var(--transition);
+  text-decoration: none;
+  user-select: none;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:disabled,
+.btn.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 6px 14px rgba(52, 88, 154, 0.28);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  box-shadow: 0 8px 18px rgba(52, 88, 154, 0.35);
+}
+
+.btn-secondary {
+  color: var(--text);
+  background: #edf2f7;
+  border-color: #d2e0f0;
+}
+
+.btn-secondary:hover {
+  background: #e2e8f0;
+}
+
+.btn-danger {
+  color: #fff;
+  background: var(--danger);
+  border-color: var(--danger);
+}
+
+.btn-danger:hover {
+  background: #c53030;
+  border-color: #c53030;
+}
+
+.btn-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0.3rem;
+  border-radius: 50%;
+  background: rgba(67, 56, 202, 0.1);
+  color: var(--primary);
+  text-align: center;
+}
+
+.btn-icon:hover {
+  background: rgba(67, 56, 202, 0.2);
+}
+
+.input,
+.form-control,
+.select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  padding: 0.68rem 0.8rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.input:focus,
+.form-control:focus,
+.select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.25);
+}
+
+.table, .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+}
+
+.table th,
+.table td,
+.data-table th,
+.data-table td {
+  border: 1px solid var(--border);
+  padding: 0.75rem 0.85rem;
+}
+
+.table th,
+.data-table th {
+  background: #f1f5f9;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.table tbody tr:hover,
+.data-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* existing module dashboard styles below */
+/* Module / card layout for module dashboards */
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 16px;
+  width: 100%;
+}
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.module-page {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 1240px;
+  padding: 14px;
+}
+
+.module-page h1 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.module-page.module-customers .module-card,
+.module-page.module-invoices .module-card,
+.module-page.module-products .module-card,
+.module-page.module-payments .module-card,
+.module-page.module-estimates .module-card,
+.module-page.module-inventory .module-card {
+  min-width: 220px;
+}
+
+.module-card {
+  display: block;
+  border: 0;
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 120px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  color: #fff;
+  background: linear-gradient(135deg, #5a67d8 0%, #2b6cb0 100%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.module-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+.module-card h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+}
+
+.module-card p {
+  margin: 0 0 8px;
+}
+
+.module-card .hint {
+  font-size: 0.88rem;
+  opacity: 0.85;
+}
+
+.module-card a {
+  color: #e2e8f0;
+  border-bottom: 1px dashed rgba(226, 232, 240, 0.8);
+  text-decoration: none;
+}
+
+.module-card a:hover {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.95);
+}
+
+.module-card.module-invoices { background: linear-gradient(135deg, #4a5568 0%, #2f855a 100%); }
+.module-card.module-customers { background: linear-gradient(135deg, #2b6cb0 0%, #63b3ed 100%); }
+.module-card.module-products { background: linear-gradient(135deg, #d53f8c 0%, #f687b3 100%); }
+.module-card.module-inventory { background: linear-gradient(135deg, #dd6b20 0%, #ed8936 100%); }
+.module-card.module-users { background: linear-gradient(135deg, #805ad5 0%, #9f7aea 100%); }
+.module-card.module-audit_trail { background: linear-gradient(135deg, #38b2ac 0%, #319795 100%); }
+.module-card.module-sales { background: linear-gradient(135deg, #2c7a7b 0%, #38b2ac 100%); }
+.module-card.module-estimates { background: linear-gradient(135deg, #dd6b20 0%, #ed8936 100%); }
+.module-card.module-expenses { background: linear-gradient(135deg, #e53e3e 0%, #f56565 100%); }
+.module-card.module-reports { background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%); }
+.module-card.module-companies { background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%); }
+.module-card.module-company_details { background: linear-gradient(135deg, #38a169 0%, #48bb78 100%); }
+.module-card.module-exchange_rates { background: linear-gradient(135deg, #3182ce 0%, #63b3ed 100%); }
+.module-card.module-setup { background: linear-gradient(135deg, #744210 0%, #b7791f 100%); }
+.module-card.module-change_password { background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); }
+.module-card.module-credit_management { background: linear-gradient(135deg, #2f855a 0%, #48bb78 100%); }
+.module-card.module-customer_statement { background: linear-gradient(135deg, #b83280 0%, #d53f8c 100%); }
+
+.module-card.module-status-live { box-shadow: 0 8px 30px rgba(30, 130, 76, 0.38); }
+.module-card.module-status-disabled { opacity: 0.72; }
+
+.module-card:nth-child(odd) {
+  background: linear-gradient(135deg, #38b2ac 0%, #2c7a7b 100%);
+}
+
+.module-card:nth-child(even) {
+  background: linear-gradient(135deg, #f6ad55 0%, #dd6b20 100%);
+}
+
+.module-card:nth-child(3n) {
+  background: linear-gradient(135deg, #ed64a6 0%, #d53f8c 100%);
+}
+
+.module-card:nth-child(4n) {
+  background: linear-gradient(135deg, #63b3ed 0%, #3182ce 100%);
+}
+
+.module-card:nth-child(5n) {
+  background: linear-gradient(135deg, #9f7aea 0%, #6b46c1 100%);
+}
+
+@media (max-width: 640px) {
+  .module-grid {
+    grid-template-columns: 1fr;
+  }
+}

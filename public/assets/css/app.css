@@ -1,0 +1,101 @@
+/* Module / card layout for module dashboards */
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.module-card {
+  display: block;
+  border: 0;
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 120px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  color: #fff;
+  background: linear-gradient(135deg, #5a67d8 0%, #2b6cb0 100%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.module-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+.module-card h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+}
+
+.module-card p {
+  margin: 0 0 8px;
+}
+
+.module-card .hint {
+  font-size: 0.88rem;
+  opacity: 0.85;
+}
+
+.module-card a {
+  color: #e2e8f0;
+  border-bottom: 1px dashed rgba(226, 232, 240, 0.8);
+  text-decoration: none;
+}
+
+.module-card a:hover {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.95);
+}
+
+.module-card.module-invoices { background: linear-gradient(135deg, #4a5568 0%, #2f855a 100%); }
+.module-card.module-customers { background: linear-gradient(135deg, #2b6cb0 0%, #63b3ed 100%); }
+.module-card.module-products { background: linear-gradient(135deg, #d53f8c 0%, #f687b3 100%); }
+.module-card.module-inventory { background: linear-gradient(135deg, #dd6b20 0%, #ed8936 100%); }
+.module-card.module-users { background: linear-gradient(135deg, #805ad5 0%, #9f7aea 100%); }
+.module-card.module-audit_trail { background: linear-gradient(135deg, #38b2ac 0%, #319795 100%); }
+.module-card.module-sales { background: linear-gradient(135deg, #2c7a7b 0%, #38b2ac 100%); }
+.module-card.module-estimates { background: linear-gradient(135deg, #dd6b20 0%, #ed8936 100%); }
+.module-card.module-expenses { background: linear-gradient(135deg, #e53e3e 0%, #f56565 100%); }
+.module-card.module-reports { background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%); }
+.module-card.module-companies { background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%); }
+.module-card.module-company_details { background: linear-gradient(135deg, #38a169 0%, #48bb78 100%); }
+.module-card.module-exchange_rates { background: linear-gradient(135deg, #3182ce 0%, #63b3ed 100%); }
+.module-card.module-setup { background: linear-gradient(135deg, #744210 0%, #b7791f 100%); }
+.module-card.module-change_password { background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); }
+.module-card.module-credit_management { background: linear-gradient(135deg, #2f855a 0%, #48bb78 100%); }
+.module-card.module-customer_statement { background: linear-gradient(135deg, #b83280 0%, #d53f8c 100%); }
+
+.module-card.module-status-live { box-shadow: 0 8px 30px rgba(30, 130, 76, 0.38); }
+.module-card.module-status-disabled { opacity: 0.72; }
+
+.module-card:nth-child(odd) {
+  background: linear-gradient(135deg, #38b2ac 0%, #2c7a7b 100%);
+}
+
+.module-card:nth-child(even) {
+  background: linear-gradient(135deg, #f6ad55 0%, #dd6b20 100%);
+}
+
+.module-card:nth-child(3n) {
+  background: linear-gradient(135deg, #ed64a6 0%, #d53f8c 100%);
+}
+
+.module-card:nth-child(4n) {
+  background: linear-gradient(135deg, #63b3ed 0%, #3182ce 100%);
+}
+
+.module-card:nth-child(5n) {
+  background: linear-gradient(135deg, #9f7aea 0%, #6b46c1 100%);
+}
+
+@media (max-width: 640px) {
+  .module-grid {
+    grid-template-columns: 1fr;
+  }
+}
