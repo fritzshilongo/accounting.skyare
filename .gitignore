@@ -17,3 +17,32 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+# Local backups, archives, and editor artifacts
+*.bak
+*.tmp
+*.swp
+*.swo
+*.zip
+
+# Runtime logs and debug dumps
+*.log
+error_log
+public/error_log
+
+# Local SQL and dump artifacts
+*.sql
+*.sqlite
+*.sqlite3
+
+# Common env variants that must stay local
+.env.local
+.env.*.local
+.env.staging
+.env.testing
+
+# Local odd scratch files
+client_id,
+s*\[
+elect('DESCRIBE products');
+-
