@@ -21,9 +21,18 @@ Create these repository secrets in GitHub:
 
 ## How Deploy Runs
 
-- Trigger automatically on push to `main`.
+- Trigger automatically only after `Laravel CI` completes successfully on `main`.
 - You can also run manually from GitHub Actions with `workflow_dispatch`.
 - Workflow syncs files via `rsync` and runs remote Laravel optimize/migrate commands.
+
+## Require Manual Production Approval
+
+Set approval gates in GitHub so deploy waits for human confirmation:
+
+1. Go to repository **Settings > Environments > production**.
+2. Under **Deployment protection rules**, enable **Required reviewers**.
+3. Add yourself or trusted maintainers as reviewers.
+4. Optionally restrict deploy branch to `main` only.
 
 ## Recommended Safety
 
